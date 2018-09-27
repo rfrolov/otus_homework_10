@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.6)
 
+find_package (Threads REQUIRED)
+
 project(bulkmt VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 file(GLOB_RECURSE SOURCES *.cpp *.h)
@@ -10,7 +12,10 @@ set_target_properties(
         ${PROJECT_NAME} PROPERTIES
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
+        COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
 )
+
+target_link_libraries(${PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 
