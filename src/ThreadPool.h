@@ -5,20 +5,31 @@
 #include <condition_variable>
 #include <functional>
 
+/// Класс пула потоков.
 struct ThreadPool {
+
+    /// Структура статистики.
     struct Statistic {
-        size_t bulk;
-        size_t cmd_num;
+        size_t bulk_num;        ///< Количество блоков.
+        size_t command_num;     ///< Количество команд.
 
         Statistic &operator+=(const Statistic &other) {
-            bulk += other.bulk;
-            cmd_num += other.cmd_num;
+            bulk_num += other.bulk_num;
+            command_num += other.command_num;
             return *this;
+        }
+
+        bool operator==(const Statistic &other) {
+            return bulk_num == other.bulk_num && command_num == other.command_num;
         }
     };
 
     using func_t = std::function<Statistic()>;
 
+    /**
+     * Конструктор.
+     * @param threads_num Количество потоков в пуле.
+     */
     explicit ThreadPool(size_t threads_num) : m_max_queue_size{threads_num * 3} {
         m_statistics.resize(threads_num);
         m_workers.reserve(threads_num);
@@ -47,6 +58,7 @@ struct ThreadPool {
             );
     }
 
+    /// Добавляет задачу в очередь.
     template<typename F, typename... Args>
     void enqueue(F &&f, Args &&... args) {
         for (;;) {
@@ -68,6 +80,10 @@ struct ThreadPool {
     }
 
 
+    /**
+     * Завершает все потоки и выводит статистику.
+     * @return Статистика.
+     */
     const auto &finish() {
         {
             std::unique_lock<std::mutex> lock(m_queue_mutex);
@@ -84,6 +100,7 @@ struct ThreadPool {
         return m_statistics;
     }
 
+    /// Деструктор.
     ~ThreadPool() {
         finish();
     }

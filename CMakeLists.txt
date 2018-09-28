@@ -5,6 +5,6 @@ if (NOT DEFINED ENV{TRAVIS_BUILD_NUMBER})
 endif ()
 
 add_subdirectory(src)
-#add_subdirectory(test)
+add_subdirectory(test)
 
 enable_testing()
