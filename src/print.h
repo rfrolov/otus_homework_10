@@ -2,6 +2,8 @@
 
 #include <fstream>
 #include <iostream>
+#include <ctime>
+#include <string>
 #include "ThreadPool.h"
 
 ThreadPool::Statistic print_log(const std::vector<std::string> &cmd_pool, std::ostream &os = std::cout) {
