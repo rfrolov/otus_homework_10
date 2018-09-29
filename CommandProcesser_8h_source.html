@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>otus_homework_07: Исходный файл src/CommandProcesser.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">otus_homework_07
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Определения типов</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CommandProcesser.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="CommandProcesser_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CommandHandler_8h.html">CommandHandler.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ThreadPool_8h.html">ThreadPool.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="CommandProcesser_8h.html#afcdb1fb96944c9e7efe1af1423191e7d">    8</a></span>&#160;std::ostream &amp;<a class="code" href="CommandProcesser_8h.html#afcdb1fb96944c9e7efe1af1423191e7d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code" href="structCommandHandler_1_1Statistic.html">CommandHandler::Statistic</a> &amp;statistic) {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;строк: &quot;</span> &lt;&lt; statistic.<a class="code" href="structCommandHandler_1_1Statistic.html#affdbd6f51f847819bfeec23a5f4be554">string_num</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;, блоков: &quot;</span> &lt;&lt; statistic.<a class="code" href="structCommandHandler_1_1Statistic.html#aa4ee741a34d6a5029e6c4e7d2a0661cb">bulk_num</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;, команд: &quot;</span> &lt;&lt; statistic.<a class="code" href="structCommandHandler_1_1Statistic.html#a99dd492ecba3091a8065a478d3c50d78">command_num</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="CommandProcesser_8h.html#a16cac29c3ef16c022befe14f962559f5">   14</a></span>&#160;std::ostream &amp;<a class="code" href="CommandProcesser_8h.html#afcdb1fb96944c9e7efe1af1423191e7d">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code" href="structThreadPool_1_1Statistic.html">ThreadPool::Statistic</a> &amp;statistic) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;блоков: &quot;</span> &lt;&lt; statistic.<a class="code" href="structThreadPool_1_1Statistic.html#a6cf4c7addd5c60209e674b98cf7d5a23">bulk_num</a> &lt;&lt; <span class="stringliteral">&quot;, команд: &quot;</span> &lt;&lt; statistic.<a class="code" href="structThreadPool_1_1Statistic.html#a54f4ba30b3ca85ff67ee2702330585a6">command_num</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structCommandProcesser.html">   19</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structCommandProcesser.html">CommandProcesser</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structCommandProcesser.html#a73936bd48888be35b66c204c9e3268e9">   26</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structCommandProcesser.html#a73936bd48888be35b66c204c9e3268e9">CommandProcesser</a>(<span class="keyword">const</span> std::size_t block_size,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                              std::istream &amp;is = std::cin,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                              std::ostream &amp;os = std::cout) :</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            m_is{is}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            , m_os{os}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            , m_command_handler{block_size}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            , m_log_pool{1}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            , m_file_pool{2} {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        m_print_log_id = m_command_handler.<a class="code" href="structCommandHandler.html#ae9b1ffe4c75af46dc75d305bcce68ffa">add_printer</a>([<span class="keyword">this</span>](std::time_t, <a class="code" href="structCommandHandler.html#a304886d57c54aac4b711ba2eddde5dbf">CommandHandler::command_pull_t</a> command_pull) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            m_log_pool.<a class="code" href="structThreadPool.html#a8a1d8ed7b1eaa86ef0cdd8f709c95d17">enqueue</a>([command_pull] { <span class="keywordflow">return</span> <a class="code" href="print_8cpp.html#a78d319b0d85d674e3e1756bb23d24c75">print_log</a>(command_pull); });</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        });</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        m_print_file_id = m_command_handler.<a class="code" href="structCommandHandler.html#ae9b1ffe4c75af46dc75d305bcce68ffa">add_printer</a>([<span class="keyword">this</span>](std::time_t time, <a class="code" href="structCommandHandler.html#a304886d57c54aac4b711ba2eddde5dbf">CommandHandler::command_pull_t</a> command_pull) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">size_t</span> rnd{};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            m_file_pool.<a class="code" href="structThreadPool.html#a8a1d8ed7b1eaa86ef0cdd8f709c95d17">enqueue</a>([time, command_pull] { <span class="keywordflow">return</span> <a class="code" href="print_8cpp.html#a28de04a3baf545b9a8b927220b482924">print_file</a>(time, rnd++, command_pull); });</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        });</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structCommandProcesser.html#a2e08458a66d6a5849767d1856f7ea686">   46</a></span>&#160;    <a class="code" href="structCommandProcesser.html#a2e08458a66d6a5849767d1856f7ea686">~CommandProcesser</a>() {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        m_command_handler.<a class="code" href="structCommandHandler.html#ae352a7c44c946120a69a37af96bffeea">del_printer</a>(m_print_file_id);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        m_command_handler.<a class="code" href="structCommandHandler.html#ae352a7c44c946120a69a37af96bffeea">del_printer</a>(m_print_log_id);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structCommandProcesser.html#ad0db3a6e07c2d3cab0588cc25228e228">   52</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structCommandProcesser.html#ad0db3a6e07c2d3cab0588cc25228e228">process</a>() {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">for</span> (std::string command; getline(m_is, command);) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            m_command_handler.<a class="code" href="structCommandHandler.html#a9632e972561a99a7273ad35b119ffc9a">add_command</a>(command);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">auto</span> cmd_statistic  = m_command_handler.<a class="code" href="structCommandHandler.html#a4bce70aa826a781bcbc7bb8fe2903ac7">finish</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">auto</span> log_statistic  = m_log_pool.<a class="code" href="structThreadPool.html#a3d76162b719741b271e6dfdb6987797a">finish</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">auto</span> file_statistic = m_file_pool.<a class="code" href="structThreadPool.html#a3d76162b719741b271e6dfdb6987797a">finish</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        m_os &lt;&lt; <span class="stringliteral">&quot;main поток: &quot;</span> &lt;&lt; cmd_statistic &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;statistic: log_statistic) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            m_os &lt;&lt; <span class="stringliteral">&quot;log  поток(&quot;</span> &lt;&lt; (&amp;statistic - &amp;log_statistic[0] + 1)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                 &lt;&lt; <span class="stringliteral">&quot;), &quot;</span> &lt;&lt; statistic &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;statistic: file_statistic) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            m_os &lt;&lt; <span class="stringliteral">&quot;file поток(&quot;</span> &lt;&lt; (&amp;statistic - &amp;file_statistic[0] + 1)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                 &lt;&lt; <span class="stringliteral">&quot;), &quot;</span> &lt;&lt; statistic &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    std::istream   &amp;m_is;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::ostream   &amp;m_os;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="structCommandHandler.html">CommandHandler</a> m_command_handler;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">size_t</span>         m_print_log_id;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">size_t</span>         m_print_file_id;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="structThreadPool.html">ThreadPool</a>     m_log_pool;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="structThreadPool.html">ThreadPool</a>     m_file_pool;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="ttc" id="ThreadPool_8h_html"><div class="ttname"><a href="ThreadPool_8h.html">ThreadPool.h</a></div></div>
+<div class="ttc" id="structCommandHandler_html_a4bce70aa826a781bcbc7bb8fe2903ac7"><div class="ttname"><a href="structCommandHandler.html#a4bce70aa826a781bcbc7bb8fe2903ac7">CommandHandler::finish</a></div><div class="ttdeci">const auto &amp; finish()</div><div class="ttdoc">Выводит оставшиеся команды и выдает статистику. </div><div class="ttdef"><b>Definition:</b> CommandHandler.h:85</div></div>
+<div class="ttc" id="print_8cpp_html_a78d319b0d85d674e3e1756bb23d24c75"><div class="ttname"><a href="print_8cpp.html#a78d319b0d85d674e3e1756bb23d24c75">print_log</a></div><div class="ttdeci">ThreadPool::Statistic print_log(const std::vector&lt; std::string &gt; &amp;command_pool, std::ostream &amp;os)</div><div class="ttdef"><b>Definition:</b> print.cpp:4</div></div>
+<div class="ttc" id="structCommandHandler_html_ae352a7c44c946120a69a37af96bffeea"><div class="ttname"><a href="structCommandHandler.html#ae352a7c44c946120a69a37af96bffeea">CommandHandler::del_printer</a></div><div class="ttdeci">void del_printer(size_t printer_id)</div><div class="ttdef"><b>Definition:</b> CommandHandler.h:53</div></div>
+<div class="ttc" id="structCommandHandler_1_1Statistic_html"><div class="ttname"><a href="structCommandHandler_1_1Statistic.html">CommandHandler::Statistic</a></div><div class="ttdoc">Структура статискики. </div><div class="ttdef"><b>Definition:</b> CommandHandler.h:12</div></div>
+<div class="ttc" id="structCommandHandler_html_a9632e972561a99a7273ad35b119ffc9a"><div class="ttname"><a href="structCommandHandler.html#a9632e972561a99a7273ad35b119ffc9a">CommandHandler::add_command</a></div><div class="ttdeci">void add_command(const std::string &amp;command)</div><div class="ttdef"><b>Definition:</b> CommandHandler.h:63</div></div>
+<div class="ttc" id="structThreadPool_1_1Statistic_html"><div class="ttname"><a href="structThreadPool_1_1Statistic.html">ThreadPool::Statistic</a></div><div class="ttdoc">Структура статистики. </div><div class="ttdef"><b>Definition:</b> ThreadPool.h:12</div></div>
+<div class="ttc" id="structCommandHandler_1_1Statistic_html_affdbd6f51f847819bfeec23a5f4be554"><div class="ttname"><a href="structCommandHandler_1_1Statistic.html#affdbd6f51f847819bfeec23a5f4be554">CommandHandler::Statistic::string_num</a></div><div class="ttdeci">size_t string_num</div><div class="ttdoc">Количество строк. </div><div class="ttdef"><b>Definition:</b> CommandHandler.h:13</div></div>
+<div class="ttc" id="structCommandProcesser_html_a2e08458a66d6a5849767d1856f7ea686"><div class="ttname"><a href="structCommandProcesser.html#a2e08458a66d6a5849767d1856f7ea686">CommandProcesser::~CommandProcesser</a></div><div class="ttdeci">~CommandProcesser()</div><div class="ttdoc">Деструктор. </div><div class="ttdef"><b>Definition:</b> CommandProcesser.h:46</div></div>
+<div class="ttc" id="structCommandHandler_html_a304886d57c54aac4b711ba2eddde5dbf"><div class="ttname"><a href="structCommandHandler.html#a304886d57c54aac4b711ba2eddde5dbf">CommandHandler::command_pull_t</a></div><div class="ttdeci">std::vector&lt; std::string &gt; command_pull_t</div><div class="ttdef"><b>Definition:</b> CommandHandler.h:8</div></div>
+<div class="ttc" id="structThreadPool_1_1Statistic_html_a6cf4c7addd5c60209e674b98cf7d5a23"><div class="ttname"><a href="structThreadPool_1_1Statistic.html#a6cf4c7addd5c60209e674b98cf7d5a23">ThreadPool::Statistic::bulk_num</a></div><div class="ttdeci">size_t bulk_num</div><div class="ttdoc">Количество блоков. </div><div class="ttdef"><b>Definition:</b> ThreadPool.h:13</div></div>
+<div class="ttc" id="structThreadPool_html"><div class="ttname"><a href="structThreadPool.html">ThreadPool</a></div><div class="ttdoc">Класс пула потоков. </div><div class="ttdef"><b>Definition:</b> ThreadPool.h:9</div></div>
+<div class="ttc" id="structCommandHandler_html_ae9b1ffe4c75af46dc75d305bcce68ffa"><div class="ttname"><a href="structCommandHandler.html#ae9b1ffe4c75af46dc75d305bcce68ffa">CommandHandler::add_printer</a></div><div class="ttdeci">size_t add_printer(const fn_printer_t &amp;printer)</div><div class="ttdef"><b>Definition:</b> CommandHandler.h:44</div></div>
+<div class="ttc" id="structCommandProcesser_html_a73936bd48888be35b66c204c9e3268e9"><div class="ttname"><a href="structCommandProcesser.html#a73936bd48888be35b66c204c9e3268e9">CommandProcesser::CommandProcesser</a></div><div class="ttdeci">CommandProcesser(const std::size_t block_size, std::istream &amp;is=std::cin, std::ostream &amp;os=std::cout)</div><div class="ttdef"><b>Definition:</b> CommandProcesser.h:26</div></div>
+<div class="ttc" id="structCommandHandler_1_1Statistic_html_a99dd492ecba3091a8065a478d3c50d78"><div class="ttname"><a href="structCommandHandler_1_1Statistic.html#a99dd492ecba3091a8065a478d3c50d78">CommandHandler::Statistic::command_num</a></div><div class="ttdeci">size_t command_num</div><div class="ttdoc">Количество команд. </div><div class="ttdef"><b>Definition:</b> CommandHandler.h:15</div></div>
+<div class="ttc" id="print_8cpp_html_a28de04a3baf545b9a8b927220b482924"><div class="ttname"><a href="print_8cpp.html#a28de04a3baf545b9a8b927220b482924">print_file</a></div><div class="ttdeci">ThreadPool::Statistic print_file(std::time_t time, size_t rnd, const std::vector&lt; std::string &gt; &amp;command_pool)</div><div class="ttdef"><b>Definition:</b> print.cpp:13</div></div>
+<div class="ttc" id="structCommandHandler_html"><div class="ttname"><a href="structCommandHandler.html">CommandHandler</a></div><div class="ttdef"><b>Definition:</b> CommandHandler.h:7</div></div>
+<div class="ttc" id="structCommandProcesser_html_ad0db3a6e07c2d3cab0588cc25228e228"><div class="ttname"><a href="structCommandProcesser.html#ad0db3a6e07c2d3cab0588cc25228e228">CommandProcesser::process</a></div><div class="ttdeci">void process()</div><div class="ttdoc">Обработать поток ввода. </div><div class="ttdef"><b>Definition:</b> CommandProcesser.h:52</div></div>
+<div class="ttc" id="CommandProcesser_8h_html_afcdb1fb96944c9e7efe1af1423191e7d"><div class="ttname"><a href="CommandProcesser_8h.html#afcdb1fb96944c9e7efe1af1423191e7d">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const CommandHandler::Statistic &amp;statistic)</div><div class="ttdef"><b>Definition:</b> CommandProcesser.h:8</div></div>
+<div class="ttc" id="structCommandHandler_1_1Statistic_html_aa4ee741a34d6a5029e6c4e7d2a0661cb"><div class="ttname"><a href="structCommandHandler_1_1Statistic.html#aa4ee741a34d6a5029e6c4e7d2a0661cb">CommandHandler::Statistic::bulk_num</a></div><div class="ttdeci">size_t bulk_num</div><div class="ttdoc">Количество блоков. </div><div class="ttdef"><b>Definition:</b> CommandHandler.h:14</div></div>
+<div class="ttc" id="structThreadPool_html_a8a1d8ed7b1eaa86ef0cdd8f709c95d17"><div class="ttname"><a href="structThreadPool.html#a8a1d8ed7b1eaa86ef0cdd8f709c95d17">ThreadPool::enqueue</a></div><div class="ttdeci">void enqueue(F &amp;&amp;f, Args &amp;&amp;...args)</div><div class="ttdoc">Добавляет задачу в очередь. </div><div class="ttdef"><b>Definition:</b> ThreadPool.h:63</div></div>
+<div class="ttc" id="structCommandProcesser_html"><div class="ttname"><a href="structCommandProcesser.html">CommandProcesser</a></div><div class="ttdef"><b>Definition:</b> CommandProcesser.h:19</div></div>
+<div class="ttc" id="structThreadPool_1_1Statistic_html_a54f4ba30b3ca85ff67ee2702330585a6"><div class="ttname"><a href="structThreadPool_1_1Statistic.html#a54f4ba30b3ca85ff67ee2702330585a6">ThreadPool::Statistic::command_num</a></div><div class="ttdeci">size_t command_num</div><div class="ttdoc">Количество команд. </div><div class="ttdef"><b>Definition:</b> ThreadPool.h:14</div></div>
+<div class="ttc" id="CommandHandler_8h_html"><div class="ttname"><a href="CommandHandler_8h.html">CommandHandler.h</a></div></div>
+<div class="ttc" id="structThreadPool_html_a3d76162b719741b271e6dfdb6987797a"><div class="ttname"><a href="structThreadPool.html#a3d76162b719741b271e6dfdb6987797a">ThreadPool::finish</a></div><div class="ttdeci">const auto &amp; finish()</div><div class="ttdef"><b>Definition:</b> ThreadPool.h:87</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>
